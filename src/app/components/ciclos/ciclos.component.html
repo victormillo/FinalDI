@@ -1,0 +1,29 @@
+<h1> Los ciclos tecnologicos son </h1>
+
+<div class="row">
+    <div class="col-6">
+      <h1>DAM</h1>
+      <p>Asignaturas:</p>
+      <ul class="list-group" *ngFor="let item of listaDam">
+            <li class="list-group-item">{{item.nombre}}</li>
+        </ul>
+    </div>
+    <div class="col-6">
+        <h1>DAW</h1>
+        <p>Asignaturas:</p>
+        <ul class="list-group" *ngFor="let item of listaDaw">
+            <li class="list-group-item">{{item.nombre}}</li>
+        </ul>
+    </div>
+  </div>
+  <div class="row m-3">
+    <div class="col-3" *ngFor="let item of listaCiclos">
+        <div class="card"  style="width: 18rem;" >
+            <img src="{{item.imagen}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{item.curso}} {{item.nombre}}</h5>
+            <button type="button" class="btn btn-primary" (click)="verDetalle('detalle-ciclos', item.curso, item.nombre)">Ver detalles</button>
+            </div>
+    </div>
+</div>
+</div>

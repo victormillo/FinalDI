@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <div class="row mx-auto ">
+        <div class="col-4">
+        <ul class="list-group">
+            
+                <p style="text-align: center;">Filtrar por nombre:</p>
+                <input type="text" class="form-control" placeholder="Introduce el nombre de la asignatura" >
+            
+        </ul>
+        </div>
+        <div class="col-4">
+            <ul class="list-group">
+                
+                    <p style="text-align: center;">Filtrar por ciclo:</p>
+                    <input type="text" class="form-control" placeholder="Introduce el nombre del ciclo" >
+                
+                
+            </ul>
+        </div>
+        <div class="col-4 ">
+            <ul class="list-group">
+                
+                    <p style="text-align: center;">Filtrar por conocimiento:</p>
+                    <input type="text" class="form-control" placeholder="Introduce el nombre del conocimiento" >
+                
+                
+            </ul>
+            <br>
+        </div> 
+        
+        <button type="button" name="filterPost"  class="btn btn-primary">Filtrar</button>
+        
+  </div>
+  <br>
+  <h2>Los resultados de busqueda son:</h2>
+  <div class="alert alert-primary" role="alert">
+    El numero de asignaturas que cumplen el filtro son: {{listaAsignaturas.length}}
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col" *ngFor="let item of listaAsignaturas">
+    <div class="card" style="width: 18rem; margin-top: 30px;">
+      <div class="card-body">
+          <h5 class="card-title">{{item.nombre}}</h5>
+          <p>Profesor: {{item.profesor}}</p>
+          <p>Ciclos: {{item.ciclo}}</p>
+          <p>Curso: {{item.curso}}</p>
+          <img *ngFor="let imagen of item.conocimientos" [src]="imagen.imagen" style="width: 30px; height: 30px; margin-left: 14px;"><br>
+      </div>
+  </div>
+  <br>
+  </div>
+</div>
